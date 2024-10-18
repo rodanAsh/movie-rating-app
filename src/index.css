@@ -8,3 +8,8 @@ body{
   background-color: #181818;
   color: #fff;
 }
+
+.link{
+  text-decoration: none;
+  color: inherit;
+}

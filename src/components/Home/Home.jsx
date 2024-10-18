@@ -1,8 +1,14 @@
 import React from 'react'
+import MovieListing from '../MovieListing/MovieListing.jsx'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <section>
+      <div className="banner-img">
+
+      </div>
+      <MovieListing />
+    </section>
   )
 }
 
