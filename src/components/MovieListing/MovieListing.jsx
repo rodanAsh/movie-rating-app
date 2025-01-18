@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick'
 import { useSelector } from 'react-redux'
-import { getAllMovies, getAllSeries } from '../../features/movies/movieSlice'
+import { getAllMovies, getAllSeries, getIsMovieLoading, getIsSeriesLoading } from '../../features/movies/movieSlice'
 import MovieCard from "../MovieCard/MovieCard"
 import "./MovieListing.scss"
 import { Settings } from '../../common/settings'
@@ -10,6 +10,11 @@ const MovieListing = () => {
 
   const movies = useSelector(getAllMovies)
   const series = useSelector(getAllSeries)
+  const isMovieLoading = useSelector(getIsMovieLoading)
+  const isSeriesLoading = useSelector(getIsSeriesLoading)
+  console.log(isMovieLoading);
+  console.log(isSeriesLoading);
+  
   let renderMovies = ""
   let renderSeries = ""
 
@@ -35,6 +40,7 @@ const MovieListing = () => {
           <Slider {...Settings}>
             {renderMovies}
           </Slider>
+          {isMovieLoading && <p>Loading...</p>}
         </div>
       </div>
       <div className='show-list'>
@@ -43,6 +49,7 @@ const MovieListing = () => {
           <Slider {...Settings}>
             {renderSeries}
           </Slider>
+          {isSeriesLoading && <p>Loading...</p>}
         </div>
       </div>
     </section>

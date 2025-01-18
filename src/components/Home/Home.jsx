@@ -11,8 +11,8 @@ const Home = () => {
   {/* function to hit omdb api */}
  
   useEffect(() => {
-    dispatch(fetchAsyncMovies())
-    dispatch(fetchAsyncSeries())
+    dispatch(fetchAsyncMovies("one piece"))
+    dispatch(fetchAsyncSeries("one piece"))
   },[dispatch])
 
   return (
