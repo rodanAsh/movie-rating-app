@@ -21,6 +21,7 @@ export const fetchAsyncSeries = createAsyncThunk('movies/fetchAsyncSeries', asyn
 
 export const fetchMovieOrSeriesDetail = createAsyncThunk('movies/fetchMovieOrSeriesDetail',async(id) => {
     const response = await movieApi.get(`?apiKey=${apiKey}&i=${id}&plot=full`)
+    
     return response.data
 })
 
@@ -35,8 +36,8 @@ const movieSlice = createSlice({
     initialState:initialState,
     reducers:{
         removeSelectedMovieOrSeries: (state) => {
-            state.selectedMovieOrSeries = {}
-        }
+            state.selectedMovieOrSeries = {};
+        },
     },
     extraReducers: (builder) => {
         builder.
@@ -80,16 +81,3 @@ export const getAllSeries = (state) => state.movies.series
 export const getSelectedMovieOrSeries = (state) => state.movies.selectedMovieOrSeries
 
 export default movieSlice.reducer
-
-// {
-//     [fetchAsyncMovies.pending]: () => {
-//         console.log("Pending")
-//     },
-//     [fetchAsyncMovies.fulfilled]: (state,{payload}) => {
-//         console.log("fetched sucessfully")
-//         return {...state,movies:payload}
-//     },
-//     [fetchAsyncMovies.rejected]: () => {
-//         console.log("Rejected")
-//     }
-// }

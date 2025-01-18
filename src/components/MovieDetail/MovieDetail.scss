@@ -3,7 +3,8 @@
 .movie-section{
     display: flex;
     justify-content: space-evenly;
-    padding: 40px 0px;
+    gap: 20px;
+    padding: 40px 80px;
     color: $font-primary;
     font-weight: 400;
 }

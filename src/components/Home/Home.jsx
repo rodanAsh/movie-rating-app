@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './Home.scss'
 import MovieListing from '../MovieListing/MovieListing.jsx'
 import { useDispatch } from 'react-redux'
 import { fetchAsyncMovies,fetchAsyncSeries } from '../../features/movies/movieSlice.js'
@@ -15,7 +16,7 @@ const Home = () => {
   },[dispatch])
 
   return (
-    <section>
+    <section className='home'>
       <div className="banner-img">
 
       </div>
